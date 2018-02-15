@@ -10,12 +10,20 @@ class ToDoList extends Component {
     this.props.fetchTodos();
   }
 
+  renderToDos(){
+    const {todos} = this.props;
+    return todos.map(todo => {
+      return (
+          <ToDoItem item={todo} key={todo.id} />
+      )
+    })
+  }
+
   render() {
     return (
-      <div>
-        ToDoList!
-        <ToDoItem item={this.props.todos}/>
-      </div>
+      <ul>
+        {this.renderToDos()}
+      </ul>
     )
   }
 

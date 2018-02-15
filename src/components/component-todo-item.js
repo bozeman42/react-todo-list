@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 
 class ToDoItem extends Component {
-
   render() {
+    const {text, complete} = this.props.item;
     console.log(this.props);
+
     return (
-      <div>
-        {this.props.item}
-      </div>
+      <li>
+        {complete?'(X)':'( )'} {text}
+      </li>
     );
   }
 }
